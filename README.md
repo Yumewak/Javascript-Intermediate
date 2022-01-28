@@ -78,3 +78,9 @@ car.color; //get the value of the property         "Get Property
 car.numberOfDoors = 0; // set the number of doors  "Set Property" 
 car.drive (); // call the method drive             "Call Method"
 ```
+```javascript
+//Diferent ways of change a text
+document.getElementsByTagName("li").item(2).innerHTML = "Mario"
+document.getElementsByTagName("li")[2].innerHTML = "Ulrich"
+document.querySelector("ul").lastElementChild.innerHTML = "Ashley"
+```
