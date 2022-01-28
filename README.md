@@ -105,3 +105,29 @@ document.querySelector("li.item") // When you're combining selectors that occur 
 
 document.querySelectorAll("#list .item")[2] //Return an array with all of the objects that match that selector
 ```
+
+## Manipulating and Changing Styles of HTML Elements with Javascript
+```javascript
+// Every singles CSS property can be changed in this way using Javascript, but the property names might look different
+document.querySelector("h1").style.color = "red" 
+//Javascript naming conventions tend to be camel cased, and the values have to be represented as strings
+document.querySelector("h1").style.fontSize = "10rem"
+```
+[HTML DOM Style Object](https://www.w3schools.com/jsref/dom_obj_style.asp)
+
+## The separation of concerns: Structure vs Style vs Behaviour
+```javascript
+//Class list
+//The add method can use to add classes to the "classList"
+document.querySelector("button").classList.add("invisible")
+document.querySelector("button").classList.remove("invisible")
+document.querySelector("button").classList.toggle("invisible")
+```
+
+## Text Manipulation and the Text Content Property
+```javascript
+// Gives you the HTML that's in between the element tags, you can also add HTML code on the fly
+document.querySelector("h1").innerHTML = "<em>Good Bye</em>"
+//Just show you the text
+document.getElementById("title").textContent = "GoodBye"
+```
