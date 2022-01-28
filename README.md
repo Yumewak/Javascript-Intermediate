@@ -84,3 +84,24 @@ document.getElementsByTagName("li").item(2).innerHTML = "Mario"
 document.getElementsByTagName("li")[2].innerHTML = "Ulrich"
 document.querySelector("ul").lastElementChild.innerHTML = "Ashley"
 ```
+
+## Selecting HTML Elements with Javascript
+```javascript
+document.getElementsByTagName("li")[2].style.color = "purple" // It searches for the element with a particular tag name, the result is an array
+
+document.getElementsByTagName("li").length // length property tell how many items are in the array
+
+document.getElementsByClassName("btn")[0] // Returns an array of element with a particular class name
+
+document.getElementById("title").innerHTML = "Good Bye" // Using this method you only get back one item instead of an array
+
+document.querySelector("") // Only returns a single item, the string inside the parentheses is a selector
+("body")
+(".navbar")
+("#title")
+//With selectors we can combine different things, for example an id with a class, or a class with an element
+document.querySelector("li a")
+document.querySelector("li.item") // When you're combining selectors that occur in the same element there are no spaces
+
+document.querySelectorAll("#list .item")[2] //Return an array with all of the objects that match that selector
+```
