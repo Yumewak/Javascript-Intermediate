@@ -131,3 +131,13 @@ document.querySelector("h1").innerHTML = "<em>Good Bye</em>"
 //Just show you the text
 document.getElementById("title").textContent = "GoodBye"
 ```
+
+## Manupulating HTML element attributes
+```javascript
+// Get the list of attributes
+document.querySelector("a").attributes;
+// Retrieve the current value of that attribute
+document.querySelector("a").getAttribute("href")
+// Change the attirbute
+document.querySelector("a").setAttribute("href", "https://www.bing.com")
+```
