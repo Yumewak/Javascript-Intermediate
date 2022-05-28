@@ -89,3 +89,39 @@ function calculator(num1, num2, operator) {
     return operator(num1, num2);
 }
 ```
+
+## How to play sounds on a website
+```
+First create a new variable and then create new audio object, and specifies the name of the sound file
+and then play the new object with the method "play()"
+```
+```javascript
+var audio = new Audio('audio_file.mp3')
+audio.play();
+```
+```
+Refreshing memory about Introducction to the DOM
+We know that we can grab the innerHTML and we can use that to differentiate the buttons so that when
+a user press a button we get the character that the button contains and then we use that to determine
+wich sound we're going to play.
+
+this.
+this Is basically the identity of the button that triggered the event listener
+try console.log(this) and console.log(this.innerHTML)
+```
+```
+Challege: Take a look  inside the styles.css and assing a background image to each of the buttons
+```
+```css
+background-image: url("");
+```
+```
+Challege: Modify the code to change the text color of the button that got clicked to the color white
+```
+```javascript
+for (let count = 0; count < document.querySelectorAll(".drum").length; count++) {
+    document.querySelectorAll(".drum")[count].addEventListener("click", function(){
+        this.style.color = "white";
+    })
+}
+```
