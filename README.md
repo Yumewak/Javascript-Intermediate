@@ -125,3 +125,6 @@ for (let count = 0; count < document.querySelectorAll(".drum").length; count++) 
     })
 }
 ```
+[HTML Audio Element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement) \
+[HTML Media Elements - Methods](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement#methods) \
+[How to play audio](https://stackoverflow.com/questions/9419263/how-to-play-audio)
