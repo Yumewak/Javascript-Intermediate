@@ -128,3 +128,69 @@ for (let count = 0; count < document.querySelectorAll(".drum").length; count++) 
 [HTML Audio Element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement) \
 [HTML Media Elements - Methods](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement#methods) \
 [How to play audio](https://stackoverflow.com/questions/9419263/how-to-play-audio)
+
+## Javascript objects
+### Object
+```
+Whe can see an object has an excel table
+Properties   | bellBoy1             | bellBoy2 | bellBoy3
+--------------------------------------------
+name         |timmy                 |
+age          |19                    |
+hasWorkPermit|true                  |
+languages    |["french", "englis"]  |
+```
+```javascript
+//Creating an object manually
+var bellBoy1 = {
+    name: "Timmy",
+    age : 19,
+    hasWorkPermit: true,
+    languages:["French", "English"]
+}
+
+//We we're using the dot to acces the property "name"
+alert("Hello, my name is" + bellBoy1.name) // Hello, my name is timmy
+
+//When we're creating properties inside objects we're just creating a variable that's associated with another variable
+//And you can assign it any value you wish, number, string, array, etc.
+```
+```
+Constructor Function also know Object "Factory"
+```
+```javascript
+function BellyBoy(name, age, hasWorkPermit, languages) { // The name of the constructor function have to be capitalized, no camelcase
+    this.name = name;
+    this.age = age;
+    this.hasWorkPermit = hasWorkPermit;
+    this.languages = languages;
+}
+// Initialise object
+var bellBoy1 = new BellyBoy("Timmy", 19, true, ["French", "English"]);
+```
+```
+Exercise: Create a new object hosekeeper1 and tap in to it and his properties by using the dot notation.
+Challenge: Create a constructor function for the houseKeeper1, so instead of creating it one by one use
+the constructor for any houseKeeper object, and then to create the object houseKeeper1 using that constructor
+function.
+```
+```javascript
+//Create object
+var houseKeeper1 = {
+    yearsOfExperience: 12,
+    name: "Jane",
+    cleaningRepertoire: ["bathroom", "lobby", "bedroom"]
+}
+//Acces to its properties
+console.log(houseKeeper1.name)
+```
+```javascript
+//Constructor function
+function HouseKeeper (name, yearsOfExperience, cleaningRepertoire) {
+    this.name = name;
+    this.yearsOfExperience = yearsOfExperience;
+    this. cleaningRepertoire = cleaningRepertoire;
+}
+//Initialise object
+var houseKeeper1 = new HouseKeeper("Bartolomeu", 120, ["Porgraming", "Medicine", "Astronaut"]);
+```
