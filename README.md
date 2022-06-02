@@ -194,3 +194,36 @@ function HouseKeeper (name, yearsOfExperience, cleaningRepertoire) {
 //Initialise object
 var houseKeeper1 = new HouseKeeper("Bartolomeu", 120, ["Porgraming", "Medicine", "Astronaut"]);
 ```
+
+##How to use switch statements
+```
+Railroad switch: Switch statements it will take the code down a different track depending on the value of a variable
+Whate we going to switch on
+```
+```javascript
+switch (expresion) { //Switch the letter that is inside the innerHTML
+    case expresion:
+    //code;
+    break:
+    default:
+ }
+```
+```javascript
+var buttonInnerHTML = this.innerHTML;
+switch(buttonInnerHTML){
+    case "w":
+    //play audio w
+    break; //Every case start with ":" and end with "break;"
+    //Break tells the code to exit the swithc statement and continue with the rest of the code
+```
+```
+We recommend to give your sound audio diferent name, asociated with the seound they make
+Remember change it in all the parts that are afected like audio.play to tom1.play()
+```
+```
+The "default" part is kind of like the "else" statement at the end of an "if"
+Its a good practice to specify something
+```
+```javascript
+default:console.log(buttonInnerHTML)
+```
