@@ -195,7 +195,7 @@ function HouseKeeper (name, yearsOfExperience, cleaningRepertoire) {
 var houseKeeper1 = new HouseKeeper("Bartolomeu", 120, ["Porgraming", "Medicine", "Astronaut"]);
 ```
 
-##How to use switch statements
+## How to use switch statements
 ```
 Railroad switch: Switch statements it will take the code down a different track depending on the value of a variable
 Whate we going to switch on
