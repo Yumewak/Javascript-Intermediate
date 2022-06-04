@@ -227,3 +227,89 @@ Its a good practice to specify something
 ```javascript
 default:console.log(buttonInnerHTML)
 ```
+
+## Objects, their methods and the dot notation
+```
+Methods
+If we wanted our object to also have an associated function then all we have to do is provide the
+name of the function as a new parameter and then colon, and then after the colon we just put in the
+anonymous function.
+```
+```javascript
+var bellBoy1 = {
+    name:"Timmy",
+    age: 19,
+    hasWorkPermit: true,
+    languages:["French", "English"],
+    moveSuitcase: function () { // Method
+        alert("May I take your suitcase");
+        pickUpSuitcase(); //This is for demostration porpouses
+        move(); // Also for demostration porpouses
+    }
+```
+```
+And now our bellBoy1 has a method, wich remember is just a function that's associated with an object
+```
+```
+Call Method
+When using properties or calling a method we're always using the dot notation.
+```
+```javascript
+bellBoy1.moveSuitcase(); //The only difference that you see between method and the property are those parentheses
+```
+```
+Constructor function incorporate the method in to our construction function
+```
+```javascript
+function BellBoy(name,age...) {
+    this.name = name;
+    this.age = age;
+    ...
+    this.moveSuitcase = function() {
+        //code;
+    }
+}
+```
+```
+Challenge: add a method to our HoseKeeper constructor function and this method is just called clean
+simplified so that our method send an alert says "cleaning in progress", construct the object and then
+call the cleaning method associated with that new object.
+```
+```javascript
+//This is the constructor function
+function HouseKeeper (name, yearsOfExperience, cleaningRepertoire) {
+    this.name = name;
+    this.yearsOfExperience = yearsOfExperience;
+    this.cleaningRepertoire = cleaningRepertoire;
+    this.clean = function() {
+        alert("cleaning in progress");
+    }
+}
+
+//This is how we create a new object using the constructor function
+var houseKeeper1 = new HouseKeeper ("Monika", 20, ["Bathroom", "Kitcher", "Bed Room"]);
+
+//This is how we call the cleaning method associated with the new object, and we can call any property or method using the dot
+houseKeeper1.clean();
+```
+```
+Reviewing the "How to play sounds on a website" chapter, about the "play()" method and how it works
+```
+```javascript
+//Create new Audio object and pass the sound file location
+var tom1 = new Audio("sound/tom-1.mp3");
+
+//We used that object method called "play()" to play that sound
+tom1 = play();
+
+//Constructor function whith which play() is associated
+function Audio (fileLocation){
+    this.fileLocation = fileLocation;
+    this.play = function() {
+        //Tap in to the audio hardware
+        //Check the file at fileLocation exist
+        //Check the file at fileLocation is a sound file
+        //Play the file at fileLocation
+    }
+}
+```
