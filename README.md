@@ -313,3 +313,83 @@ function Audio (fileLocation){
     }
 }
 ```
+
+## Using keyboard Event Listener to check for Keypress/Keydown
+```
+For the buttons we can add an EventListener to the html elements that represent the buttons
+but what exactly do we add this "keydown" event listener to?
+You can add an event listener to the entire document, so that the entire web page starts listening
+for keyboard strokes.
+```
+```javascript
+document.addEventListener("keydown", function (){
+    alert("key was pressed")
+});
+```
+```
+How do we figure out wich key was pressed?
+```
+```javascript
+addEventListener("keydown", function (event){ //The "event" is the parameter
+    console.log(event); //You can alswo try event.key to acces the key property inside the event
+});
+```
+```
+In order tu fully understand this part of the code we have to understand how in Javascript
+we can pass function as parameters and we can also have function as callbacks, include things
+that we get back afther the event has happend
+```
+```
+Challenge: Create a function that takes a character and checks it agains the switch in order to play the correct sound.
+And then we're going to call it inside the event listener for the key pressed as well as the event listener for our drum buttons
+```
+```javascript
+//Detecting Button Press
+for (let count = 0; count < document.querySelectorAll(".drum").length; count++) {
+    document.querySelectorAll(".drum")[count].addEventListener("click", function(){
+        var buttonInnerHTML = this.innerHTML; 
+        makeSound(buttonInnerHTML);    
+    })
+}
+//Detecting Keyboard Press
+document.addEventListener("keydown", function (event) {
+    var keypress = event.key;
+    makeSound(keypress)
+});
+//Make sound
+function makeSound(key){
+    switch (key) {
+        case "w":
+            var tom1 = new Audio("./sounds/tom-1.mp3");
+            tom1.play();
+            break;
+        case "a":
+            var tom2 = new Audio("./sounds/tom-2.mp3");
+            tom2.play();
+            break;
+        case "s":
+            var tom3 = new Audio("./sounds/tom-3.mp3");
+            tom3.play();
+            break;
+        case "d":
+            var tom4 = new Audio("./sounds/tom-4.mp3");
+            tom4.play();
+            break;
+        case "j":
+            var snare = new Audio("./sounds/snare.mp3");
+            snare.play();
+            break;
+        case "k":
+            var crash = new Audio("./sounds/crash.mp3");
+            crash.play();
+            break;
+        case "l":
+            var kickBass = new Audio("./sounds/kick-bass.mp3");
+            kickBass.play();
+            break;
+    
+        default: console.log(buttonInnerHTML)
+            break;
+    } 
+}
+```
