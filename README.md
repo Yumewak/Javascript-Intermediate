@@ -29,6 +29,13 @@ for (let count = 0; count < document.querySelectorAll(".drum").length; count++) 
     })
 }
 ```
+```javascript
+//Note: if you decide to use this function instead of an anonimous, you use "handleClick" without parenthesis
+document.querySelector("h1").addEventListener("click", handleClick)//If you use "handleClick()" with parenthesis it will call it immediately
+function handleClick() {
+    alert("I got clicked");
+}
+```
 
 ## Higer order functions and passing functions as arguments
 ### Higer order functions
