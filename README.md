@@ -400,3 +400,48 @@ function makeSound(key){
     } 
 }
 ```
+## Understanding callbacks and how to respond to events
+```
+Recap higer order functions
+Higer order functions are able to take functions has inputs
+A callback is essentially a function that is passed into another function and then called inside that higer order function
+to complete some sort of rutine or action
+```
+```javascript
+document.addEventListener("keydown", respondToKey);//"respondToKey" is a callback function
+function respondToKey(event) {
+    console.log(event);
+}
+// A callback function alows us to wait for something to finish
+//In this case we wait till a key is pressed and then the document call the callback function "respondToKey"
+```
+```javascript
+//For this example acces to the javascript subject in wikipedia page
+//This anonimous callback function is not called by us but it's called by the object that experience the click
+//And when that happens we can get it to send us information that it'll only know once the vent happens
+$0.addEventListener("click", function(event) {
+    console.log(event);
+}
+```
+### The anatomy of a callback
+```javascript
+function anotherAddEventListener(typeOfEvent, callback) {
+    //Detect event code
+    //This is the object that the function creates
+    var eventThatHappened = { //This is the object "eventThatHappened"
+        //This are the elements of the object
+        eventType: "keypress",
+        key: "p",
+        durationOfKeyPressed: 2
+    }
+    // if the name of the eventType inside the object is equal to the type of event we give as input when we call the function execute the callback
+    if (eventThatHappened.eventType === typeOfEvent){
+        callback(eventThatHappened); //This get the object and send has a parameter, while at the same time execute the callback function that is given has input when call "anotherAddEventListener" function
+    }
+}
+//Calling the above function "anotherAddEventListener"
+//debugger; This is to understand what happened step by step
+anotherAddEventListener ("keypress", function(event){
+    console.log(event);
+})
+```
