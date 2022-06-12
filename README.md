@@ -445,3 +445,32 @@ anotherAddEventListener ("keypress", function(event){
     console.log(event);
 })
 ```
+
+## Adding animations to websites
+```javascript
+//First we create a function that will contain the animation code
+function buttonAnimation(currentKey) {
+    var activeButton = document.querySelector("." + currentKey);
+    activeButton.classList.add("pressed");
+    setTimeout(function(){ //this will execute the anonimous function in the time we specify
+        activeButton.classList.remove("pressed");
+    }, 100)
+}
+```
+```javascript
+//Then we call the animation function into our click and keydown functions
+//Detecting Button Press
+for (let count = 0; count < document.querySelectorAll(".drum").length; count++) {
+    document.querySelectorAll(".drum")[count].addEventListener("click", function(){
+        var buttonInnerHTML = this.innerHTML; 
+        makeSound(buttonInnerHTML);   
+        buttonAnimation(buttonInnerHTML); 
+    })
+}
+//Detecting Keyboard Press
+document.addEventListener("keydown", function (event) {
+    var keypress = event.key;
+    makeSound(keypress);
+    buttonAnimation(keypress);
+});
+```
