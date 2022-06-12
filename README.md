@@ -474,3 +474,4 @@ document.addEventListener("keydown", function (event) {
     buttonAnimation(keypress);
 });
 ```
+[setTimeout()](https://www.w3schools.com/jsref/met_win_settimeout.asp)
